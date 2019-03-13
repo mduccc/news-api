@@ -1,6 +1,7 @@
 {
   "name": "news-api",
   "version": "1.0.0",
+  "main": "app.js",
   "start": "node app.js",
   "dependencies": {
     "dotenv": "^6.2.0",
