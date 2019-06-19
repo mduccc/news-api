@@ -1,6 +1,6 @@
 const domain = process.env.DOMAIN
 const port = process.env.PORT
-const med = 'http'
+const med = process.env.METHOD
 const urlArray = [med+'://'+domain+':'+port+'/newsfeed/toidicodedao', 
                     med+'://'+domain+':'+port+'/newsfeed/vnreview']
 

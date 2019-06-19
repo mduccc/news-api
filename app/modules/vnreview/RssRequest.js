@@ -58,8 +58,10 @@ module.exports = class RssRequest {
     }
 
     async parseRss(data) {
+        const domain = process.env.DOMAINLIVE
+        const port = process.env.PORTLIVE
+        const med = process.env.METHOD
         const parseString = require('xml2js').parseString
-
         const array = [];
         await parseString(data, (err, result) => {
             let channel = result.rss.channel
@@ -86,7 +88,7 @@ module.exports = class RssRequest {
                         description: description,
                         image: image,
                         date: date,
-                        full_post: process.env.METHOD + '://' + process.env.DOMAIN + ':' + process.env.PORT + '/post/vnreview?post_url=' + link
+                        full_post: med  + '://' + domain + '' + port + '/post/vnreview?post_url=' + link
                     })
                 }
             }

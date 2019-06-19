@@ -56,6 +56,9 @@ module.exports = function rssRequest(page, callback) {
 }
 
 function parseRss(data) {
+    const domain = process.env.DOMAINLIVE
+    const port = process.env.PORTLIVE
+    const med = process.env.METHOD
     let array = []
     const jsdom = require('jsdom').JSDOM
     const dom = new jsdom(data)
@@ -104,7 +107,7 @@ function parseRss(data) {
             description: description,
             image: image,
             date: date,
-            full_post: process.env.METHOD + '://' + process.env.DOMAIN + ':' + process.env.PORT + '/post/toidicodedao?post_url=' + link
+            full_post: med + '://' + domain + '' + port + '/post/toidicodedao?post_url=' + link
         })
     }
     return array
