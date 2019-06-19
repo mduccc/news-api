@@ -58,7 +58,7 @@ module.exports = function rssRequest(page, callback) {
 function parseRss(data) {
     const domain = process.env.DOMAINLIVE
     const port = process.env.PORTLIVE
-    const med = process.env.METHOD
+    const med = process.env.METHODLIVE
     let array = []
     const jsdom = require('jsdom').JSDOM
     const dom = new jsdom(data)

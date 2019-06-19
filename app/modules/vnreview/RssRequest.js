@@ -60,7 +60,7 @@ module.exports = class RssRequest {
     async parseRss(data) {
         const domain = process.env.DOMAINLIVE
         const port = process.env.PORTLIVE
-        const med = process.env.METHOD
+        const med = process.env.METHODLIVE
         const parseString = require('xml2js').parseString
         const array = [];
         await parseString(data, (err, result) => {
